@@ -1,2 +1,2 @@
 # libvstring
-Static library for dynamic string manipulation for AmigaOS/M68k
+Static library for dynamic memory and string manipulation for AmigaOS/M68k
