@@ -15,6 +15,13 @@
 * RESULT
 *   Number of bytes needed to encode a codepoint in UTF-8, always 1, 2, 3
 *   or 4.
+* NOTES
+*   Lenght ranges are tested from the shortest up. Threshold values ($80,
+*   $800, $10000) are constructed starting from $7F + $01, then shifting left.
+*   Register usage:
+*     D0 - calculated length
+*     D1 - codepoint
+*     D2 - comparision thresholds
 *
 *****************************************************************************/
 
