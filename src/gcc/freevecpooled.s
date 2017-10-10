@@ -20,15 +20,15 @@
 *   AllocVecPooled
 *
 *****************************************************************************/
-			.global _FreeVecPooled
-			.xref   _SysBase
+		.global _FreeVecPooled
+		.xref   _SysBase
 			
-FreePooled = -714
+FreePooled 	= -714
 
 _FreeVecPooled:
-			MOVE.L	a6,-(sp)
-			MOVE.L	-(a1),d0
-			MOVEA.L	_SysBase,a6
-			JSR		FreePooled(a6)
-			MOVEA.L	(sp)+,a6
-			RTS
+		MOVE.L	a6,-(sp)
+		MOVE.L	-(a1),d0
+		MOVEA.L	_SysBase,a6
+		JSR	FreePooled(a6)
+		MOVEA.L	(sp)+,a6
+		RTS

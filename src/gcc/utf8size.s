@@ -18,25 +18,24 @@
 *
 *****************************************************************************/
 
-			.global	_Utf8Size
+		.global	_Utf8Size
 			
 _Utf8Size:
-			MOVE.L	d2,-(sp)
-			MOVEQ	  #0x7F,d2
-			MOVE.L	d0,d1
-			ADDQ.L	#1,d2			
-			MOVEQ	  #1,d0
-			CMP.L	  d2,d1
-			BCS.S	  exit
-			LSL.L	  #4,d2
-			ADDQ.L  #1,d0
-			CMP.L	  d2,d1
-			BCS.S	  exit
-			LSL.L	  #5,d2
-			ADDQ.L	#1,d0
-			CMP.L 	d2,d1
-			BCS.S	  exit
-			ADDQ.L	#1,d0
-exit:
-			MOVE.L	(sp)+,d2
-			RTS
+		MOVE.L	d2,-(sp)
+		MOVEQ	#0x7F,d2
+		MOVE.L	d0,d1
+		ADDQ.L	#1,d2			
+		MOVEQ	#1,d0
+		CMP.L	d2,d1
+		BCS.S	exit
+		LSL.L	#4,d2
+		ADDQ.L	#1,d0
+		CMP.L	d2,d1
+		BCS.S	exit
+		LSL.L	#5,d2
+		ADDQ.L	#1,d0
+		CMP.L	d2,d1
+		BCS.S	exit
+		ADDQ.L	#1,d0
+exit:		MOVE.L	(sp)+,d2
+		RTS
