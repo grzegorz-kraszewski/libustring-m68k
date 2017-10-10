@@ -26,27 +26,26 @@
 *
 *****************************************************************************/
 
-			.global	_CloneMemPooled
-			
-			.xref	_SysBase
-			.xref	_AllocVecPooled
-			
+		.global	_CloneMemPooled
+
+		.xref	_SysBase
+		.xref	_AllocVecPooled
+
 CopyMem		=	-624 
 MEMF_ANY	=	0
-						
+
 _CloneMemPooled:	
-			MOVEM.L d2/a2/a6,-(sp)
-			MOVE.L	d0,d2
-			MOVEA.L	a1,a2
-			BSR.S	  _AllocVecPooled
-			TST.L	  d0
-			BEQ.S	  nomemory
-			MOVEA.L	a2,a0
-			MOVEA.L	d0,a1
-			MOVEA.L	_SysBase,a6
-			EXG		  d2,d0
-			JSR		  CopyMem(a6)
-			MOVE.L	d2,d0
-nomemory:
-			MOVEM.L	(sp)+,d2/a2/a6
-			RTS			
+		MOVEM.L d2/a2/a6,-(sp)
+		MOVE.L	d0,d2
+		MOVEA.L	a1,a2
+		BSR.S	_AllocVecPooled
+		TST.L	d0
+		BEQ.S	nomemory
+		MOVEA.L	a2,a0
+		MOVEA.L	d0,a1
+		MOVEA.L	_SysBase,a6
+		EXG	d2,d0
+		JSR	CopyMem(a6)
+		MOVE.L	d2,d0
+nomemory:	MOVEM.L	(sp)+,d2/a2/a6
+		RTS			
