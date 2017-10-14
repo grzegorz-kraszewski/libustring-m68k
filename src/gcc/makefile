@@ -1,7 +1,9 @@
 ASM = as
 ASMOPTS = 
-OBJS = allocvecpooled.o freevecpooled.o clonemem.o clonemempooled.o utf8size.o
-SRCS = allocvecpooled.s freevecpooled.s clonemem.s clonemempooled.s utf8size.s
+OBJS = allocvecpooled.o freevecpooled.o clonemem.o clonemempooled.o utf8size.o \
+ strcopy.o strcopyw.o strcopyl.o
+SRCS = allocvecpooled.s freevecpooled.s clonemem.s clonemempooled.s utf8size.s \
+ strcopy.s strcopyw.s strcopyl.s
 
 OUTPUT = libvstring.a
 
