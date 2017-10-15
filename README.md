@@ -15,6 +15,7 @@ No suffix means functions for 8-bit encodings (codepages). Sometimes such functi
 - `CloneMemPooled()` - the same as above but into memory pool
 ### String Sizing
 - `StrSize[UWL]()` - string size in bytes including zero terminator
+- `StrCount[UWL]()` - number of characters in a string, without terminator
 ### String Copying and Cloning
 - `StrCopy[UWL]()` - plain copy, may be used for concatenation
 - `StrClone[UWL]()` - a copy in newly allocated memory
