@@ -24,8 +24,10 @@ No suffix means functions for 8-bit encodings (codepages). Sometimes such functi
 - `StrJoinPooled[UWL]()` - joins multiple strings into memory allocated from a pool
 ### UTF-8 Specific
 - `Utf8Size()` - byte size of UTF-8 encoded character
-## Parameters Passing
-To speed up the code, parameters are passed in CPU registers (*An* for pointers, *Dn* for other data).
+## Arguments Passing and Checking
+To speed up the code, arguments are passed in CPU registers (*An* for pointers, *Dn* for other data). As a rule, there is no argument validation (e. g. NULL checking). Passing valid arguments is a duty of calling code, error reporting on such low level is ineffective. The only exception is validation of string encoding (UTF-8 rules, UTF-16 surrogate pairs, UTF-32 range), which is done in functions which analyse strings character by character.
+## Endianness
+Where UTF-16 and UTF-32 endianness is significant, big endian (M680x0 native) is assumed, even for strings containing BOM. Automatic endianness detection via BOM is only supported by `StrConvert()`. Some simple functions work for both endians, it is documented per function. In general case little endian strings have to be converted before processing.
 ## Documentation
 Each function is documented in its source file, in standard Amiga AutoDoc format. The makefile provides `doc` target, which generates AmigaGuide and plaintext autodoc file using *RoboDoc* tool, available on Aminet.
 ## Compiler Support
