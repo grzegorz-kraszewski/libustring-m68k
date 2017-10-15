@@ -2,8 +2,8 @@
 Static library for dynamic memory and string manipulation for AmigaOS/M68k
 ## Function Naming Conventions
 String functions use suffixes for text encoding used:
-- *W* - 16-bit Unicode
-- *L* - 32-bit Unicode
+- *W* - UTF-16
+- *L* - UTF-32
 - *U* - UTF-8
 
 No suffix means functions for 8-bit encodings (codepages). Sometimes such functions also work for UTF-8 (for example `StrSize()`), then a macro with *U* suffix is provided, to make the function set orthogonal.
