@@ -2,10 +2,12 @@ ASM = as
 ASMOPTS = 
 OBJS = allocvecpooled.o freevecpooled.o clonemem.o clonemempooled.o utf8size.o \
  strcopy.o strcopyw.o strcopyl.o strsize.o strsizew.o strsizel.o strclone.o \
- strclonew.o strclonel.o strclonepooled.o strclonepooledw.o strclonepooledl.o
+ strclonew.o strclonel.o strclonepooled.o strclonepooledw.o strclonepooledl.o \
+ strcount.o strcountw.o strcountl.o
 SRCS = allocvecpooled.s freevecpooled.s clonemem.s clonemempooled.s utf8size.s \
  strcopy.s strcopyw.s strcopyl.s strsize.s strsizew.s strsizel.s strclone.s \
- strclonew.s strclonel.s strclonepooled.s strclonepooledw.s strclonepooledl.s
+ strclonew.s strclonel.s strclonepooled.s strclonepooledw.s strclonepooledl.s \
+ strcount.s strcountw.s strcountl.s
 
 OUTPUT = libvstring.a
 
