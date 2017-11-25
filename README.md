@@ -24,6 +24,8 @@ No suffix means functions for 8-bit encodings (codepages). Sometimes such functi
 - `StrJoinPooled[UWL]()` - joins multiple strings into memory allocated from a pool
 ### UTF-8 Specific
 - `Utf8Size()` - byte size of UTF-8 encoded character
+- `Utf8Dec()` - single character validating UTF-8 decoder
+- `Utf8Enc()` - single character validating UTF-8 encoder
 ## Arguments Passing and Checking
 To speed up the code, arguments are passed in CPU registers (*An* for pointers, *Dn* for other data). As a rule, there is no argument validation (e. g. NULL checking). Passing valid arguments is a duty of calling code, error reporting on such low level is ineffective. The only exception is validation of string encoding (UTF-8 rules, UTF-16 surrogate pairs, UTF-32 range), which is done in functions which analyse strings character by character.
 ## Endianness
