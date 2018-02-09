@@ -1,5 +1,5 @@
-# libvstring
-Static library for dynamic memory and string manipulation for AmigaOS/M68k
+# libustring-m68k
+Static library for dynamic memory and Unicode strings manipulation for AmigaOS/M68k
 ## Function Naming Conventions
 String functions use suffixes for text encoding used:
 - *W* - UTF-16
@@ -35,4 +35,4 @@ Each function is documented in its source file, in standard Amiga AutoDoc format
 ## Compiler Support
 GCC at the moment. VBCC is planned as well. Of course these functions may be used in assembler programs by just including their source, or linking.
 ## Dependencies
-*libvstring* does not depend on any library other than system ones (*exec.library* at the moment). It does not depend on the standard C library and may be used in programs compiled with *-nostdlib* option.
+*libustring-m68k* does not depend on any library other than system ones (*exec.library* at the moment). It does not depend on the standard C library and may be used in programs compiled with *-nostdlib* option.
