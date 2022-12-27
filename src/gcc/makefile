@@ -9,11 +9,10 @@ SRCS = allocvecpooled.s freevecpooled.s clonemem.s clonemempooled.s utf8size.s \
  strclonew.s strclonel.s strclonepooled.s strclonepooledw.s strclonepooledl.s \
  strcount.s strcountw.s strcountl.s
 
-OUTPUT = libvstring.a
+OUTPUT = libustring.a
 
 lib: $(OBJS)
-	mkdir -p ../../lib
-	ar r ../../lib/$(OUTPUT) $(OBJS)
+	ar r $(OUTPUT) $(OBJS)
 
 doc: $(SRCS)
 	Join $(SRCS) AS doc.tmp
